@@ -1,55 +1,33 @@
 # One Room Roguelike
 
-[포트폴리오](https://github.com/tinkerer0/tinkerer0) · [게임 목록](https://github.com/tinkerer0/tinkerer0/blob/main/docs/GAMES.md)
+**한 방에서 몰려오는 적을 버티며 보상·아이템·융합탄으로 빌드를 만드는 브라우저 로그라이크.**
 
-**분류:** 브라우저 로그라이크 · **상태:** 공개 프로토타입
+**[▶ 브라우저에서 바로 플레이](https://tinkerer0.github.io/game/)**
 
-한 방에서 몰려오는 적을 막고, 보상과 아이템을 조합해 다음 웨이브를 버티는 브라우저 로그라이크입니다. HTML5 Canvas와 JavaScript로 만들었습니다.
+![플레이 화면](docs/images/gameplay.gif)
 
-[브라우저에서 플레이](https://tinkerer0.github.io/game/)
+적을 잡아 레벨이 오르면 보상 카드 3장 중 하나를 고릅니다. 골드로 아이템을 사서 같은 종류를 모으면 세트 효과가 생기고, 탄을 조합하면 융합탄이 됩니다(게임 안의 **융합표**에서 확인). 5웨이브마다 중간 보스, 10웨이브마다 보스가 나옵니다. Shards를 모아 새 캐릭터를 엽니다.
 
-## 조작
+WASD로 움직이고 방향키로 공격합니다.
 
-| 동작 | 키 |
-| --- | --- |
-| 이동 | WASD |
-| 조준·공격 | 방향키 |
+## 직접 실행
 
-## 게임 흐름
+빌드가 필요 없는 정적 파일(`index.html`, `game.js`, `styles.css`)입니다.
 
-- 적을 잡아 경험치를 모으고, 레벨업 보상 카드 3장 중 하나를 고릅니다.
-- 골드로 아이템을 사고 같은 종류를 모아 세트 효과를 만듭니다.
-- 탄을 조합해 융합탄을 만들 수 있습니다. 게임 안의 **융합표**에서 조합을 확인합니다.
-- 5웨이브마다 중간 보스, 10웨이브마다 보스가 등장합니다.
-- Shards를 모아 캐릭터를 해금합니다. 해금 정보와 선택한 캐릭터는 브라우저에 저장됩니다.
-
-## 로컬 실행
-
-저장소 폴더에서 아래 명령을 실행하고 `http://localhost:8000`을 엽니다. 별도 빌드나 패키지 설치는 필요 없습니다.
-
-```bash
-python3 -m http.server 8000
+```sh
+git clone https://github.com/tinkerer0/game.git
+cd game
+python3 -m http.server 8000   # http://localhost:8000 열기
 ```
 
-`index.html`을 브라우저로 직접 열 수도 있습니다. 외부 CDN이나 서버 API를 사용하지 않습니다.
+캐릭터 해금 정보는 이 브라우저(`localStorage`)에만 저장됩니다. 밸런스 목표와 알려진 한계는 [DESIGN_GOALS.md](DESIGN_GOALS.md)에 있습니다.
 
-## 현재 상태
-
-프로토타입입니다. 후반에는 성장 선택지가 단조로워질 수 있으며, 관련 목표와 한계는 [DESIGN_GOALS.md](DESIGN_GOALS.md)에 정리되어 있습니다. 레벨업 보상 선택 12회를 소진하면 웨이브 20 전에는 골드를, 이후에는 후기 강화 풀을 사용합니다.
-
-저장에는 `localStorage`의 `oneRoomRoguelikeMeta` 키를 사용합니다. 브라우저의 사이트 데이터를 지우면 캐릭터 해금 정보도 지워집니다.
-
-## 코드 구성
-
-- `index.html` — 화면과 캔버스
-- `game.js` — 전투, 웨이브, 보상, 상점, 융합
-- `styles.css` — 화면 스타일
-- `DESIGN_GOALS.md` — 밸런스와 후반 진행 설계
-
-## 기여·피드백
+## Feedback
 
 제가 이런 분야를 접한 지 얼마 안 돼서 부족한 점이 많습니다. 고칠 점이나 알려주실 내용이 있다면 issue나 PR로 남겨주시면 너무 감사하겠습니다.
 
-## 라이선스
+I am still new to this, so there is a lot to improve. Issues and pull requests with fixes or suggestions are very welcome.
 
-현재 저장소에는 라이선스가 지정되어 있지 않습니다. 이 문서는 별도의 이용 허락을 부여하지 않습니다.
+## License
+
+[MIT](LICENSE)
