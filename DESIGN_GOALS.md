@@ -1,10 +1,6 @@
 # DESIGN_GOALS — One Room Roguelike
 
-> 이 문서는 사람(Boss)과 에이전트(game-critic / game-fixer) 공용 참고 자료다.
-> 밸런스·시스템 변경을 제안하거나 평가할 때 항상 이 문서를 기준으로 판단한다.
->
-> 이력: Windows 원본(`C:\Workspace\roguelike-ko\DESIGN_GOALS.md`)이 맥북 이전 때
-> 유실되어 2026-06-12에 Boss와 Q&A로 결정사항을 다시 합의해 재작성함.
+> 밸런스·시스템 변경을 제안하거나 평가할 때 기준으로 삼는 문서다.
 
 ## 1. 핵심 목표
 
